@@ -2,7 +2,10 @@ import { useQuery } from '@tanstack/react-query';
 import { fetchPeople, fetchShips } from './starwarsService';
 
 export const usePeople = (page: number) => {
-  return useQuery(['people', page], () => fetchPeople(page));
+  return useQuery({
+    queryKey: ["people"],
+    queryFn: async () => await fetchPeople(page) 
+  });
 };
 
 export const useShips = (page: number) => {

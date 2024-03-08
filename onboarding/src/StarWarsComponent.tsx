@@ -28,7 +28,10 @@ const StarWarsComponent: React.FC = () => {
 
   const allPeople: Person[] = [...(peopleQuery1.data as Person[]), ...(peopleQuery2.data as Person[])].slice(0, 20);
   const allShips: Ship[] = [...(shipsQuery1.data as Ship[]), ...(shipsQuery2.data as Ship[])].slice(0, 20);
-  
+  console.log(allPeople);
+  console.log("done People");
+  console.log(allShips);
+  console.log("Done Ships");
   return (
     <div className="container mt-5">
       <h2 className="mb-4">People:</h2>
